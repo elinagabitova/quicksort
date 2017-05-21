@@ -1,10 +1,23 @@
 #include <iostream>
+using namespace std;
+
 template <typename Iterator>
-void insertion_sort(Iterator begin , Iterator end)
+void quickSort(Iterator left, Iterator right)
 {
-   if(!(begin < end))
-    return;
-   for(Iterator i = begin + 1 ; i != end ; ++i)
-    for(Iterator j = i; j != begin && *j < *(j-1); --j)
-        std::iter_swap(j - 1, j);
+	Iterator i = left;
+	Iterator j = right;
+	Iterator center = left;
+	while (i <= j)
+	{
+		while (*i < *center) i++;
+		while (*j > *center) j--;
+		if (i <= j)
+		{
+			swap(*i, *j);
+			i++;
+			j--;
+		}
+	} 
+	if (left < j) quickSort(left, j);
+	if (right > i) quickSort(i, right);
 }
