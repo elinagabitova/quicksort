@@ -1,31 +1,33 @@
-#include <iteratorsort.hpp>
+#include <quicksort.hpp>
 #include <catch.hpp>
 
-SCENARIO ("array")
+
+SCENARIO("mas")
 {
-  int a[] = {3, 2, 4, 5, 6};
-  int* s=a;
-  int* l=a+5;
- insertion_sort(s,l);
- REQUIRE(a[0] == 2);
- REQUIRE(a[1] == 3);
- REQUIRE(a[2] == 4);
- REQUIRE(a[3] == 5);
- REQUIRE(a[4] == 6);
+	int m[] = { 4,3,6,1,7,2 };
+	int* f = m;
+	int* l=m+5;
+	q_Sort(f, l);
+	REQUIRE(m[0] == 1);
+	REQUIRE(m[1] == 2);
+	REQUIRE(m[2] == 3);
+	REQUIRE(m[3] == 4);
+	REQUIRE(m[4] == 6);
+	REQUIRE(m[5] == 7);
 }
-SCENARIO("matr")
+SCENARIO("matrix")
 {
-  int arr[3][3] = {4, 21, 12, 5, 2, 7, 42, 26, 8};
-  int * beg = &arr[0][0];
-  int * end = &arr[2][3];
-  insertion_sort(beg,end);
-  REQUIRE(arr[0][0] == 2);
-  REQUIRE(arr[0][1] == 4);
-  REQUIRE(arr[0][2] == 5);
-  REQUIRE(arr[1][0] == 7);
-  REQUIRE(arr[1][1] == 8);
-  REQUIRE(arr[1][2] == 12);
-  REQUIRE(arr[2][0] == 21);
-  REQUIRE(arr[2][1] == 26);
-  REQUIRE(arr[2][2] == 42);
+ 	int mas[3][3] = { 21,5,78,34,27,6,87,11,77 };
+	int * first = &mas[0][0];
+	int * last = &mas[2][2];
+	q_Sort(first, last);
+	REQUIRE(mas[0][0] == 5);
+	REQUIRE(mas[0][1] == 6);
+	REQUIRE(mas[0][2] == 11);
+	REQUIRE(mas[1][0] == 21);
+	REQUIRE(mas[1][1] == 27);
+	REQUIRE(mas[1][2] == 34);
+	REQUIRE(mas[2][0] == 77);
+	REQUIRE(mas[2][1] == 78);
+	REQUIRE(mas[2][2] == 87);
 }
