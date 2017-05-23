@@ -7,7 +7,7 @@ SCENARIO("mas")
 	int m[] = { 4,3,6,1,7,2 };
 	int* f = m;
 	int* l=m+5;
-	q_Sort(f, l);
+	quicksort(f, l);
 	REQUIRE(m[0] == 1);
 	REQUIRE(m[1] == 2);
 	REQUIRE(m[2] == 3);
@@ -20,7 +20,7 @@ SCENARIO("matrix")
  	int mas[3][3] = { 21,5,78,34,27,6,87,11,77 };
 	int * first = &mas[0][0];
 	int * last = &mas[2][2];
-	q_Sort(first, last);
+	quicksort(first, last);
 	REQUIRE(mas[0][0] == 5);
 	REQUIRE(mas[0][1] == 6);
 	REQUIRE(mas[0][2] == 11);
