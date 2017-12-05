@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 
 template <typename Iterator>
@@ -22,4 +22,15 @@ void quickSort(Iterator left, Iterator right)
 		quickSort(left, j);
 	if (right > i) 
 		quickSort(i, right);
+}
+*/
+#include <iostream>
+template <typename Iterator>
+
+  void bubble_sort(Iterator fisrt, Iterator last)
+{
+    while(first <-- last)
+        for(Iterator i = first; i < last; ++i)
+            if(*(i + 1) < *i)
+                std::iter_swap(i, i + 1);
 }
